@@ -30,12 +30,12 @@ public class PostServiceTest {
     }
 
     @Test
-    public void Dto데이터가_posts테이블에_저장된다 () {
+    public void DTO_test () {
         //given
         PostsSaveRequestDTO dto = PostsSaveRequestDTO.builder()
                 .author("jojoldu@gmail.com")
-                .content("테스트")
-                .title("테스트 타이틀")
+                .content("pro")
+                .title("project")
                 .build();
 
         //when

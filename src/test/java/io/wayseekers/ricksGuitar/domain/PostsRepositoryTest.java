@@ -25,36 +25,34 @@ public class PostsRepositoryTest {
 
 	@After
 	public void cleanup() {
-		/**
-		 * ÀÌÈÄ Å×½ºÆ® ÄÚµå¿¡ ¿µÇâÀ» ³¢Ä¡Áö ¾Ê±â À§ÇØ Å×½ºÆ® ¸Ş¼Òµå°¡ ³¡³¯¶§ ¸¶´Ù respository ÀüÃ¼ ºñ¿ì´Â ÄÚµå
-		 **/
+
 		postsRepository.deleteAll();
 	}
 
 	@Test
-	public void °Ô½Ã±ÛÀúÀå_ºÒ·¯¿À±â() {
-		// given - Å×½ºÆ® ±¸Ãà
+	public void posts_test() {
+		// given
 		postsRepository.save(Posts.builder()
-				.title("Å×½ºÆ® °Ô½Ã±Û")
-				.content("Å×½ºÆ® º»¹®")
+				.title("pro")
+				.content("project")
 				.author("jojoldu@gmail.com")
 				.build());
-		// when	- ÇàÀ§
+		// when	
 		List<Posts> postsList = postsRepository.findAll();
 
-		// then - Å×½ºÆ® °á°ú
+		// then
 		Posts posts = postsList.get(0);
-		assertThat(posts.getTitle(), is("Å×½ºÆ® °Ô½Ã±Û"));
-		assertThat(posts.getContent(), is("Å×½ºÆ® º»¹®"));
+		assertThat(posts.getTitle(), is("pro"));
+		assertThat(posts.getContent(), is("project"));
 	}
 	
 	@Test
-    public void BaseTimeEntity_µî·Ï () {
+    public void BaseTimeEntity_ì ìš©() {
         //given
         LocalDateTime now = LocalDateTime.now();
         postsRepository.save(Posts.builder()
-                .title("Å×½ºÆ® °Ô½Ã±Û")
-                .content("Å×½ºÆ® º»¹®")
+                .title("pro")
+                .content("project")
                 .author("jojoldu@gmail.com")
                 .build());
         //when
