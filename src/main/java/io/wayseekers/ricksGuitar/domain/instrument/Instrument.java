@@ -24,14 +24,14 @@ public class Instrument extends BaseTimeEntity {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-	@Column(nullable = false)
 	private String serialNumber;
     
-	@Column(length = 100, nullable = false)
+	@Column(length = 100)
 	private String price;
 
-	@Enumerated(EnumType.STRING)
-	private InstrumentType instrumentType;
+	private String instrumentType;
+//	@Enumerated(EnumType.STRING)
+//	private InstrumentType instrumentType;
 	
 	@Column(nullable = true)
 	@Enumerated(EnumType.STRING)

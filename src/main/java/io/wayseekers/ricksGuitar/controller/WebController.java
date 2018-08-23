@@ -36,7 +36,6 @@ public class WebController {
     
     @PostMapping("/add")
     public String add(@ModelAttribute Instrument i, Model model) {
-    	System.out.println("1234567890" + i.getSerialNumber());
     	Instrument entity = iService.save(i);
     	
     	model.addAttribute("instrument", entity);
